@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubrub Quantity Approximation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Rubrub Quantity Approximation</h1>
+            <p id="datetime"></p>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>SITE</th>
+                        <th>QUANTITY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MUHYAI</td>
+                        <td>2500</td>
+                    </tr>
+                    <tr>
+                        <td>S MANZAR</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>BARIQ</td>
+                        <td>1600</td>
+                    </tr>
+                    <tr>
+                        <td>MUJARDA</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>QANA</td>
+                        <td>600</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TOTAL AREA</strong></td>
+                        <td><strong>5500</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons">
+            <button onclick="copyTable()">Copy Content</button>
+            <button onclick="window.print()">Print</button>
+        </div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            };
+            document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        function copyTable() {
+            const range = document.createRange();
+            range.selectNode(document.querySelector('table'));
+            window.getSelection().removeAllRanges(); // clear current selection
+            window.getSelection().addRange(range); // to select text
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();// to deselect
+            alert('Table content copied to clipboard');
+        }
+
+        // Update the date and time on page load
+        updateDateTime();
+        setInterval(updateDateTime, 60000); // Update the date and time every minute
+    </script>
+</body>
+</html>
