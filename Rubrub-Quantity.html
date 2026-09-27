@@ -1,86 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rubrub Quantity Approximation</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>ملابسي</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    color: #000;
+  }
+
+  .tree {
+    display: flex;
+    align-items: center;
+  }
+
+  .tree ul {
+    padding-right: 20px;
+    position: relative;
+    transition: all 0.5s;
+    list-style-type: none;
+    margin: 0;
+  }
+
+  .tree li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 5px 0;
+  }
+
+  /* Lines */
+  .tree li::before, .tree li::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    border-right: 1.5px solid #d49a46;
+    width: 20px;
+    height: 100%;
+  }
+
+  .tree li::before {
+    top: -50%;
+    border-bottom: 1.5px solid #d49a46;
+  }
+
+  .tree li::after {
+    top: 50%;
+    border-top: 1.5px solid #d49a46;
+  }
+
+  .tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+  }
+
+  .tree li:only-child {
+    padding-right: 0;
+  }
+
+  .tree li:first-child::before {
+    border: 0 none;
+  }
+
+  .tree li:last-child::after {
+    border: 0 none;
+  }
+
+  .tree li:last-child::before {
+    border-bottom: 1.5px solid #d49a46;
+    border-radius: 0 0 5px 0;
+  }
+
+  .tree li:first-child::after {
+    border-radius: 0 5px 0 0;
+  }
+
+  /* Node styling */
+  .node {
+    background-color: #fcebd0;
+    border: 1px solid #e2b881;
+    color: #4a2c00;
+    padding: 3px 10px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 12px;
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    margin: 2px 0;
+  }
+
+  .root-node {
+    background-color: #f7d6a5;
+    font-size: 12px;
+    padding: 6px 14px;
+    text-align: center;
+  }
+
+  .sub-tree {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Rubrub Quantity Approximation</h1>
-            <p id="datetime"></p>
-        </div>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>SITE</th>
-                        <th>QUANTITY</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>MUHYAI</td>
-                        <td>2500</td>
-                    </tr>
-                    <tr>
-                        <td>S MANZAR</td>
-                        <td>400</td>
-                    </tr>
-                    <tr>
-                        <td>BARIQ</td>
-                        <td>1600</td>
-                    </tr>
-                    <tr>
-                        <td>MUJARDA</td>
-                        <td>400</td>
-                    </tr>
-                    <tr>
-                        <td>QANA</td>
-                        <td>600</td>
-                    </tr>
-                    <tr>
-                        <td><strong>TOTAL AREA</strong></td>
-                        <td><strong>5500</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="buttons">
-            <button onclick="copyTable()">Copy Content</button>
-            <button onclick="window.print()">Print</button>
-        </div>
-    </div>
 
-    <script>
-        function updateDateTime() {
-            const now = new Date();
-            const options = { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric', 
-                hour: '2-digit', 
-                minute: '2-digit' 
-            };
-            document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
-        }
+<div class="tree">
+  <ul>
+    <li>
+      <span class="node root-node">ملابسي<br>GP S PU<br>TqG</span>[span_0](start_span)[span_0](end_span)
+      <ul>
+        <!-- جاكت -->
+        <li>
+          <span class="node">جاكت (jaket)<br>شتا / حر<br>برا</span>[span_1](start_span)[span_1](end_span)
+          <ul>
+            <li><span class="node">كحلي مخطط</span>[span_2](start_span)[span_2](end_span)</li>
+            <li><span class="node">بني Hfwo</span>[span_3](start_span)[span_3](end_span)</li>
+            <li><span class="node">رصاصي كابوتشن Pigon</span>[span_4](start_span)[span_4](end_span)</li>
+            <li><span class="node">Fgon M / أبيض ورصاصي / رصاصي</span>[span_5](start_span)[span_5](end_span)</li>
+            <li><span class="node">أسود</span>[span_6](start_span)[span_6](end_span)</li>
+            <li><span class="node">زيتوني زيتي</span>[span_7](start_span)[span_7](end_span)</li>
+            <li><span class="node">زيتي SMOQ</span>[span_8](start_span)[span_8](end_span)</li>
+            <li><span class="node">بيج جلد</span>[span_9](start_span)[span_9](end_span)</li>
+            <li><span class="node">رصاصي ستريتش مقلم</span>[span_10](start_span)[span_10](end_span)</li>
+            <li><span class="node">جاكت أصفر شتوي نيويورك</span>[span_11](start_span)[span_11](end_span)</li>
+            <li>
+              <span class="node">فرو / الكاب</span>[span_12](start_span)[span_12](end_span)
+              <ul>
+                <li><span class="node">أسود</span>[span_13](start_span)[span_13](end_span)</li>
+                <li><span class="node">أزرق</span>[span_14](start_span)[span_14](end_span)</li>
+                <li><span class="node">كحلي</span>[span_15](start_span)[span_15](end_span)</li>
+                <li><span class="node">رصاصي فاتح</span>[span_16](start_span)[span_16](end_span)</li>
+                <li><span class="node">Mujer jo</span>[span_17](start_span)[span_17](end_span)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
 
-        function copyTable() {
-            const range = document.createRange();
-            range.selectNode(document.querySelector('table'));
-            window.getSelection().removeAllRanges(); // clear current selection
-            window.getSelection().addRange(range); // to select text
-            document.execCommand('copy');
-            window.getSelection().removeAllRanges();// to deselect
-            alert('Table content copied to clipboard');
-        }
+        <!-- بنطلون -->
+        <li>
+          <span class="node">بنطلون (pantalón)<br>شتا / حر</span>[span_18](start_span)[span_18](end_span)
+          <ul>
+            <li><span class="node">كحلي رصاصي</span>[span_19](start_span)[span_19](end_span)</li>
+            <li><span class="node">رصاصي غامق</span>[span_20](start_span)[span_20](end_span)</li>
+            <li><span class="node">أزرق زيتي</span>[span_21](start_span)[span_21](end_span)</li>
+            <li><span class="node">أصفر زيتي</span>[span_22](start_span)[span_22](end_span)</li>
+            <li><span class="node">أسود دافينشي نيويورك</span>[span_23](start_span)[span_23](end_span)</li>
+            <li>
+              <span class="node">نسيم جينز</span>[span_24](start_span)[span_24](end_span)
+              <ul>
+                <li><span class="node">رصاصي كاروه كحلي</span>[span_25](start_span)[span_25](end_span)</li>
+                <li><span class="node">بني 38 / أزرق 38</span>[span_26](start_span)[span_26](end_span)</li>
+                <li><span class="node">بني 36 / Tea 36</span>[span_27](start_span)[span_27](end_span)</li>
+                <li><span class="node">كحلي 36 / Tea 36</span>[span_28](start_span)[span_28](end_span)</li>
+                <li><span class="node">بيج A.R.G 1044 / WOD.L S2</span>[span_29](start_span)[span_29](end_span)</li>
+              </ul>
+            </li>
+            <li>
+              <span class="node">كاجوال / مقلم</span>[span_30](start_span)[span_30](end_span)
+            </li>
+          </ul>
+        </li>
 
-        // Update the date and time on page load
-        updateDateTime();
-        setInterval(updateDateTime, 60000); // Update the date and time every minute
-    </script>
+        <!-- سويت شيرت -->
+        <li>
+          <span class="node">سويت شيرت / كاجوال</span>[span_31](start_span)[span_31](end_span)
+          <ul>
+            <li><span class="node">أسود</span>[span_32](start_span)[span_32](end_span)</li>
+            <li><span class="node">بني</span>[span_33](start_span)[span_33](end_span)</li>
+            <li><span class="node">أسود بسوستة</span>[span_34](start_span)[span_34](end_span)</li>
+            <li><span class="node">زيتي بدون سوستة</span>[span_35](start_span)[span_35](end_span)</li>
+          </ul>
+        </li>
+
+        <!-- بلوفر -->
+        <li>
+          <span class="node">بلوفر / بروك ورك</span>[span_36](start_span)[span_36](end_span)
+          <ul>
+            <li><span class="node">رصاصي رقبة</span>[span_37](start_span)[span_37](end_span)</li>
+            <li><span class="node">بيج رقبة</span>[span_38](start_span)[span_38](end_span)</li>
+            <li><span class="node">بني</span>[span_39](start_span)[span_39](end_span)</li>
+            <li><span class="node">رصاصي برقبة خفيف</span>[span_40](start_span)[span_40](end_span)</li>
+            <li><span class="node">أسود برقبة خفيف</span>[span_41](start_span)[span_41](end_span)</li>
+            <li><span class="node">قرمزي برقبة نيويورك</span>[span_42](start_span)[span_42](end_span)</li>
+          </ul>
+        </li>
+
+        <!-- داخلي -->
+        <li>
+          <span class="node">داخلي / Under</span>[span_43](start_span)[span_43](end_span)
+          <ul>
+            <li><span class="node">الفانلات</span>[span_44](start_span)[span_44](end_span)</li>
+            <li><span class="node">الملابس / الكلسونات</span>[span_45](start_span)[span_45](end_span)</li>
+            <li><span class="node">التي شيرتات</span>[span_46](start_span)[span_46](end_span)</li>
+          </ul>
+        </li>
+
+        <!-- قميص -->
+        <li>
+          <span class="node">قميص</span>[span_47](start_span)[span_47](end_span)
+          <ul>
+            <li><span class="node">أسود</span>[span_48](start_span)[span_48](end_span)</li>
+            <li><span class="node">كحلي</span>[span_49](start_span)[span_49](end_span)</li>
+            <li><span class="node">أبيض</span>[span_50](start_span)[span_50](end_span)</li>
+          </ul>
+        </li>
+
+        <!-- هودي -->
+        <li>
+          <span class="node">هودي / الملك</span>[span_51](start_span)[span_51](end_span)
+          <ul>
+            <li>
+              <span class="node">الزغابي</span>[span_52](start_span)[span_52](end_span)
+              <ul>
+                <li><span class="node">أسود في أبيض نيويورك</span>[span_53](start_span)[span_53](end_span)</li>
+                <li><span class="node">أسود كابوتشن</span>[span_54](start_span)[span_54](end_span)</li>
+              </ul>
+            </li>
+            <li><span class="node">كاجوال</span>[span_55](start_span)[span_55](end_span)</li>
+            <li><span class="node">كلاسيك</span>[span_56](start_span)[span_56](end_span)</li>
+          </ul>
+        </li>
+
+        <!-- كوتشيات -->
+        <li>
+          <span class="node">كوتشي / ( A H ) / كوتشي / ماركات باب ماضي</span>[span_57](start_span)[span_57](end_span)
+          <ul>
+            <li>
+              <span class="node">مخطط</span>[span_58](start_span)[span_58](end_span)
+              <ul>
+                <li><span class="node">رصاصي روز / ستريتش</span>[span_59](start_span)[span_59](end_span)</li>
+                <li><span class="node">أسود فرنسي LVerogy</span>[span_60](start_span)[span_60](end_span)</li>
+              </ul>
+            </li>
+            <li>
+              <span class="node">سوستة وشرايط</span>[span_61](start_span)[span_61](end_span)
+              <ul>
+                <li><span class="node">رصاصي OSSE</span>[span_62](start_span)[span_62](end_span)</li>
+                <li><span class="node">كحلي OSSE</span>[span_63](start_span)[span_63](end_span)</li>
+              </ul>
+            </li>
+            <li>
+              <span class="node">ماركة</span>[span_64](start_span)[span_64](end_span)
+              <ul>
+                <li><span class="node">أسود سوستة برقبة</span>[span_65](start_span)[span_65](end_span)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
 </body>
 </html>
